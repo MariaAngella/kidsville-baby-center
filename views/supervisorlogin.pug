@@ -1,0 +1,36 @@
+extends layout.pug
+
+block content
+    div.row.justify-content-center
+
+        div.col-md-5
+            div.card-body.border
+                header.card-header
+                    h4.card-title.text-center.pt-1 Supervisor Login
+                        form.needs-validation(novalidate="" action="/supervisorlogin"  method="POST")
+
+                            div.form-row
+                                div.col.form-group
+                                    label User Name
+                                    input(type='text', name='supervisoremailaddress', class='form-control', id='supervisoremailaddress', placeholder='Enter username', required, data-required-msg='Username is required')
+
+
+                            div.form-row
+                                div.col.form-group
+                                    label Enter Your Password
+                                    input(type='password', name='supervisorpassword', class='form-control', id='supervisorpassword', placeholder='Enter password', required, data-required-msg='Password is required')
+                            div.form-row
+                                div.col.form-group
+                                    button.btn.btn-primary.btn-block(type="submit") Login
+
+
+
+
+
+                //- End of form
+                //- End of Card-body
+
+
+
+
+

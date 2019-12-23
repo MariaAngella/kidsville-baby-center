@@ -1,0 +1,18 @@
+extends layout.pug
+
+block content
+    div.row.justify-content-center
+        div.col-md-4
+            div.card-body.border
+                a.btn.btn-success.btn-block(href="/supervisorregistration") Register Supervisor 
+                a.btn.btn-danger.btn-block(href="/supervisordashboard") Remove Supervisor 
+                a.btn.btn-success.btn-block(href="/sitterregistration") Register Sitter 
+                a.btn.btn-danger.btn-block(href="/sitterdashboarddb") Remove Sitter 
+                a.btn.btn-secondary.btn-block(href="/officialdashboard") View Customer Details
+                a.btn.btn-primary.btn-block(href="/officiallogout") Logout
+        div.col-md-7
+            div.row.justify-content-center
+                div.col-md-5
+                    div.card-body.border
+                        header.card-header
+                            h4.card-title.text-center.pt-1 User's Account is created successfully

@@ -1,0 +1,71 @@
+extends layout.pug
+
+block content
+    div.row.justify-content-center
+
+        div.col-md-5
+            div.card-body.border
+                header.card-header
+                    h4.card-title.text-center.pt-1 Official Registration
+
+
+
+                article.card-body
+                form.needs-validation(novalidate="" name="officialregistration" method="POST" action="/officialregistration" onSubmit="return +formValidation();")
+                    div.form-row
+                        div.col.form-group
+                            label First name
+                            input(type='text', name='officialfirstname', class='form-control', id='officialfirstname', placeholder='Enter first name', required, data-required-msg='First Name is required')
+
+                        div.col.form-group
+                            label Last name
+                            input(type='text', name='officiallastname', class='form-control', id='officiallastname', placeholder='Enter last name', required, data-required-msg='Last Name is required')
+                        div.col.form-group
+                            label User name
+                            input(type='text', name='officialusername', class='form-control', id='officialusername', placeholder='Enter username', required, data-required-msg='Username is required')
+                    div.form-row
+                        div.col.form-group
+                            label Email address
+                            input(type='email', name='officialemailaddress', class='form-control', id='officialemailaddress', placeholder='Enter email address', required, data-required-msg='Email address is required')
+                    div.form-row
+                        div.col.form-group
+                            label Physical address
+                            input(type='text', name='officialphysicaladdress', class='form-control', id='officialphysicaladdress', placeholder='Enter physical address', required, data-required-msg='Physical address is required')
+
+
+                    div.form-row(required)
+                        div.col.form-group
+                            label.form-check.form-check-inline
+                                input.form-check-input(type="radio" name="officialgender" value="male")
+                                span.form-check-label Male
+                        div.col.form-group
+                            label.form-check.form-check-inline
+                                input.form-check-input(type="radio" name="officialgender" value="female")
+                                span.form-check-label Female
+
+
+
+
+                    div.form-row
+                        div.col.form-group
+                            label Create password
+                            input(type='password', name='officialpassword', class='form-control', id='password', placeholder='Enter password', required, data-required-msg='Password is required')
+                    div.form-row
+                        div.col.form-group
+                            button.btn.btn-primary.btn-block(type="submit") Register
+                            a.btn.btn-success.btn-block(href="/officiallogin") Login if you have an account already  
+
+                    div.form-row
+                        small.col.text-muted By clicking the 'Sign Up' button, you confirm that you accept our 
+                            <br> Terms of use and Privacy Policy.
+
+                
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,79 @@
+extends layout
+block content
+    div.row.justify-content-center
+        div.col-md-4
+            div.card-body.border
+                header.card-header  
+                    h4.card-title Welcome to the Supervisor's dashboard.
+
+                       
+                        a.btn.btn-primary.btn-block(href="/parentregistration") Appointment for New Customer
+                        a.btn.btn-success.btn-block(href="/parentlogin") Appointment for Already Registered Customer
+                        a.btn.btn-secondary.btn-block(href="/supervisorlogout") Logout
+        div.col-md-7
+            div.card-body.border
+                header.card-header
+                    h4.card-title.text-center.pt-1 Customer's Registration
+
+
+
+                article.card-body
+                form.needs-validation(novalidate="" name="parentregistration" method="POST" action="/parentregistration" )
+                    div.form-row
+                        div.col.form-group
+                            label First name
+                            input(type='text', name='parentfirstname', class='form-control', id='parentfirstname', placeholder='Enter first name', required, data-required-msg='First Name is required')
+
+                        div.col.form-group
+                            label Last name
+                            input(type='text', name='parentlastname', class='form-control', id='parentlastname', placeholder='Enter last name', required, data-required-msg='Last Name is required')
+                        div.col.form-group
+                            label Baby's ID
+                            input(type='text', name='parentusername', class='form-control', id='parentusername', placeholder='e.g MOMO001', required, data-required-msg='Username is required')
+
+                    div.form-row
+                        div.col.form-group
+                            label Email address
+                            input(type='email', name='parentemailaddress', class='form-control', id='parentemailaddress', placeholder='Enter email address', required, data-required-msg='Email address is required')
+                    div.form-row
+                        div.col.form-group
+                            label Physical address
+                            input(type='text', name='parentphysicaladdress', class='form-control', id='parentphysicaladdress', placeholder='Enter physical address', required, data-required-msg='Physical address is required')
+
+
+                    div.form-row
+                        div.col.form-group
+                            label.form-check.form-check-inline
+                                input.form-check-input(type="radio" name="parentgender" value="male")
+                                span.form-check-label Male
+                        div.col.form-group
+                            label.form-check.form-check-inline
+                                input.form-check-input(type="radio" name="parentgender" value="female")
+                                span.form-check-label Female
+
+
+
+
+                    div.form-row
+                        div.col.form-group
+                            label Create password
+                            input(type='password', name='parentpassword', class='form-control', id='parentpassword', placeholder='Enter password', required, data-required-msg='Password is required')
+                    div.form-row
+                        div.col.form-group
+                            button.btn.btn-primary.btn-block(type="submit") Register
+                            a.btn.btn-success.btn-block(href="/parentlogin") Login if you have an account already 
+
+                    div.form-row
+                        small.col.text-muted By clicking the 'Sign Up' button, you confirm that you accept our 
+                            <br> Terms of use and Privacy Policy.
+
+           
+
+
+
+
+
+
+
+
+

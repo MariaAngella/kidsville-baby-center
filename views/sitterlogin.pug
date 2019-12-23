@@ -1,0 +1,35 @@
+extends layout.pug
+
+block content
+    div.row.justify-content-center
+
+        div.col-md-5
+            div.card-body.border
+                header.card-header
+                    h4.card-title.text-center.pt-1 Sitter Login
+                        form.needs-validation(novalidate="" action="/sitterlogin"  method="POST")
+
+                            div.form-row
+                                div.col.form-group
+                                    label User Name
+                                    input(type='email', name='sitteremailaddress', class='form-control', id='sitteremailaddress', placeholder='Enter your Email Address', required, data-required-msg='Username is required')
+
+
+                            div.form-row
+                                div.col.form-group
+                                    label Enter Your Password
+                                    input(type='password', name='sitterpassword', class='form-control', id='sitterpassword', placeholder='Enter password', required, data-required-msg='Password is required')
+                            div.form-row
+                                div.col.form-group
+                                    button.btn.btn-primary.btn-block(type="submit") Login
+
+
+
+
+                //- End of form
+                //- End of Card-body
+
+
+
+
+

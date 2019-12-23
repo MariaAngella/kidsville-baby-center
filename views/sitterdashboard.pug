@@ -1,0 +1,27 @@
+extends layout
+block content
+    header.card-header
+        h4.card-title Sitter's Dashboard
+        //- b Hello, #{currentUser.sitterfirstname}  
+    div.row.justify-content-center
+        
+        div.col.form-group.col-md-8 
+            table.table
+                thead.thead-dark
+                    tr
+                        th Parent's Contact
+                        th Baby's Name
+                        th Baby's Age
+                        th Club
+                        th Baby's Extra Information
+                            tbody
+                                each user in users
+                                    tr 
+                                        td #{user.parentphone}  
+                                        td #{user.babyname}
+                                        td #{user.babyage}
+                                        td #{user.club}
+                                        td #{user.childinformation}
+        div.col.form-group.col-md-3    
+            form(method="post" action='/sitterlogout')
+                button.btn.btn-primary.btn-block(type="submit") Log out

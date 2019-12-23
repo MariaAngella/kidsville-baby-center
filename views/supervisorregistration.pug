@@ -1,0 +1,78 @@
+extends layout.pug
+
+block content
+    div.row.justify-content-center
+        div.col-md-4
+            a.btn.btn-success.btn-block(href="/supervisorregistration") Register Supervisor 
+            a.btn.btn-danger.btn-block(href="/supervisordashboard") Remove Supervisor 
+            a.btn.btn-success.btn-block(href="/sitterregistration") Register Sitter 
+            a.btn.btn-danger.btn-block(href="/sitterdashboarddb") Remove Sitter 
+            a.btn.btn-secondary.btn-block(href="/officialdashboard") View Customer Details
+            a.btn.btn-primary.btn-block(href="/officiallogout") Logout
+
+        div.col-md-7
+            div.card-body.border
+                header.card-header
+                    h4.card-title.text-center.pt-1 Supervisor Registration
+
+
+
+                article.card-body
+                form.needs-validation(novalidate="" name="supervisorregistration" method="POST" action="/supervisorregistration" )
+                    div.form-row
+                        div.col.form-group
+                            label First name
+                            input(type='text', name='supervisorfirstname', class='form-control', id='supervisorfirstname', placeholder='Enter first name', required, data-required-msg='First Name is required')
+
+                        div.col.form-group
+                            label Last name
+                            input(type='text', name='supervisorlastname', class='form-control', id='supervisorlastname', placeholder='Enter last name', required, data-required-msg='Last Name is required')
+                        div.col.form-group
+                            label User name
+                            input(type='text', name='supervisorusername', class='form-control', id='supervisorusername', placeholder='Enter username', required, data-required-msg='Username is required')
+
+                    div.form-row
+                        div.col.form-group
+                            label Email address
+                            input(type='email', name='supervisoremailaddress', class='form-control', id='supervisoremailaddress', placeholder='Enter email address', required, data-required-msg='Email address is required')
+                    div.form-row
+                        div.col.form-group
+                            label Physical address
+                            input(type='text', name='supervisorphysicaladdress', class='form-control', id='supervisorphysicaladdress', placeholder='Enter physical address', required, data-required-msg='Physical address is required')
+
+
+                    div.form-row
+                        div.col.form-group
+                            label.form-check.form-check-inline
+                                input.form-check-input(type="radio" name="supervisorgender" value="male")
+                                span.form-check-label Male
+                        div.col.form-group
+                            label.form-check.form-check-inline
+                                input.form-check-input(type="radio" name="supervisorgender" value="female")
+                                span.form-check-label Female
+
+
+
+
+                    div.form-row
+                        div.col.form-group
+                            label Create password
+                            input(type='password', name='supervisorpassword', class='form-control', id='supervisorpassword', placeholder='Enter password', required, data-required-msg='Password is required')
+                    div.form-row
+                        div.col.form-group
+                            button.btn.btn-primary.btn-block(type="submit") Register
+                           
+
+                    div.form-row
+                        small.col.text-muted By clicking the 'Sign Up' button, you confirm that you accept our 
+                            <br> Terms of use and Privacy Policy.
+
+                
+
+
+
+
+
+
+
+

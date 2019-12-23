@@ -1,0 +1,42 @@
+extends layout
+block content
+    div.row.justify-content-center
+        div.col-md-4
+            div.card-body.border
+                header.card-header  
+                    h4.card-title Welcome to the Supervisor's dashboard.
+
+                       
+                        a.btn.btn-primary.btn-block(href="/parentregistration") Appointment for New Customer
+                        a.btn.btn-success.btn-block(href="/parentlogin") Appointment for Already Registered Customer
+                        a.btn.btn-secondary.btn-block(href="/supervisorlogout") Logout
+        div.col-md-7
+            div.card-body.border
+                header.card-header
+                    h4.card-title.text-center.pt-1 Customer Login
+                        form.needs-validation(novalidate="" action="/parentlogin"  method="POST")
+
+                            div.form-row
+                                div.col.form-group
+                                    label Baby's ID
+                                    input(type='text', name='parentusername', class='form-control', id='parentusername', placeholder='Enter baby id', required, data-required-msg='Username is required')
+
+
+                            div.form-row
+                                div.col.form-group
+                                    label Enter Customer's password
+                                    input(type='password', name='parentpassword', class='form-control', id='parentpassword', placeholder='Enter Customer email as password', required, data-required-msg='Password is required')
+                            div.form-row
+                                div.col.form-group
+                                    button.btn.btn-primary.btn-block(type="submit") Login
+
+                           
+
+
+
+            
+
+
+
+
+

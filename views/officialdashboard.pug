@@ -1,0 +1,41 @@
+extends layout.pug
+
+block content
+    div.row.justify-content-center
+        div.col-md-4
+            div.card-body.border
+                a.btn.btn-success.btn-block(href="/supervisorregistration") Register Supervisor 
+                a.btn.btn-danger.btn-block(href="/supervisordashboard") Remove Supervisor 
+                a.btn.btn-success.btn-block(href="/sitterregistration") Register Sitter 
+                a.btn.btn-danger.btn-block(href="/sitterdashboarddb") Remove Sitter 
+                a.btn.btn-secondary.btn-block(href="/officialdashboard") View Customer Details
+                a.btn.btn-primary.btn-block(href="/officiallogout") Logout
+
+        div.col-md-7 Customer Details
+            div.row.justify-content-center 
+                div.card-body.border
+                    table.table 
+                        thead.thead-dark
+                            tr
+                                th Parent's Contact
+                                th Baby's Name
+                                th Baby's Age
+                                th Club
+                                th Billing
+                                th Baby's Extra Information
+                                th Sitter
+                            tbody
+                                each user in users
+                                    tr 
+                                        td #{user.parentphone}  
+                                        td #{user.babyname}
+                                        td #{user.babyage}
+                                        td #{user.club}
+                                        td #{user.bill}
+                                        td #{user.childinformation}
+                                        td #{user.sitter}
+                                            td
+                                                form(method="post" action='/officialdashboard/delete')
+                                                    input(type="hidden", placeholder="", name="id", value=user._id)
+                                                    button.remove-doc.btn.btn-danger.col-xs-12(data-id="#{user.id}") Delete
+                                                            

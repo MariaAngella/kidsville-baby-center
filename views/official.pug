@@ -1,0 +1,15 @@
+//- users is the variable name----looping through the collection,so that we don't repeat ourselves.....user is a variable for users
+extends layout
+block content
+    div.row.justify-content-center
+        div.col-md-7
+            div.card-body.border
+                header.card-header  
+                    h4.card-title Welcome to the Official dashboard.
+                        
+
+                       
+                        a.btn.btn-primary.btn-block(href="/supervisorregistration") Register Supervisor 
+                        a.btn.btn-primary.btn-block(href="/sitterregistration") Register Sitter 
+                        a.btn.btn-primary.btn-block(href="/officialdashboard") View Customer Details
+                        a.btn.btn-primary.btn-block(href="/officiallogout") Logout
